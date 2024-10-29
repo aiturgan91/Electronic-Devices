@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.electronicdevices8.HelloController">
+    <children>
+        <ListView fx:id="listView" layoutX="293.0" layoutY="21.0" prefHeight="360.0" prefWidth="247.0" onMouseClicked="#onListClicked" />
+        <RadioButton fx:id="rbSmartphone" layoutX="35.0" layoutY="34.0" mnemonicParsing="false" selected="true" text="Smartphone">
+            <toggleGroup>
+                <ToggleGroup fx:id="device" />
+            </toggleGroup>
+        </RadioButton>
+        <RadioButton fx:id="rbLaptop" layoutX="35.0" layoutY="61.0" mnemonicParsing="false" text="Laptop" toggleGroup="$device" />
+        <RadioButton fx:id="rbTablet" layoutX="35.0" layoutY="89.0" mnemonicParsing="false" text="Tablet" toggleGroup="$device" />
+
+        <GridPane layoutX="40.0" layoutY="137.0" prefHeight="87.0" prefWidth="225.0">
+            <columnConstraints>
+                <ColumnConstraints minWidth="75.0" prefWidth="75.0" />
+                <ColumnConstraints minWidth="150.0" prefWidth="150.0" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints prefHeight="30.0" />
+                <RowConstraints prefHeight="28.0" />
+                <RowConstraints prefHeight="30.0" />
+            </rowConstraints>
+            <children>
+                <Label text="Name" />
+                <Label text="Price" GridPane.rowIndex="1" />
+                <Label text="Weight" GridPane.rowIndex="2" />
+                <TextField fx:id="textName" GridPane.columnIndex="1" />
+                <TextField fx:id="textPrice" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                <TextField fx:id="textWeight" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            </children>
+        </GridPane>
+
+        <Button layoutX="39.0" layoutY="255.0" onAction="#onAddClick" text="Add" />
+        <Button layoutX="300.0" layoutY="343.0" onAction="#onRemoveClick" text="Remove" />
+        <Label fx:id="label" layoutX="428.0" layoutY="347.0" text="Label" />
+    </children>
+</AnchorPane>
